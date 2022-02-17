@@ -1,0 +1,4 @@
+OpenCC
+Pillow
+Pyrogram
+TgCrypto
