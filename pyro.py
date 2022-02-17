@@ -2,12 +2,12 @@ from posixpath import split
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler
 app = Client("gramsession", 14897586, "49db49b537577139a4b337f2764b70a3")
-toSender = "meaallhtec"
+toSender = "SENDYMN"
 
 @app.on_message()
 def my_function(client, message):
     if message.chat.id != -1001159025906:
-        if message.text:
+        if message.text.split("||")[0]:
             textUpdate = message.text
             splitText = textUpdate.split("||")
         
@@ -18,7 +18,7 @@ def my_function(client, message):
                 chatJuser = app.get_chat(splitText[1])['id']
                 app.leave_chat(chatJuser, delete=True)
 
-        if message.chat.type == "channel" and message.chat.username != toSender:
+        if message.chat.type == "channel":
             print( message )
             if message.photo:
                 photoFileId = message.photo.file_id
